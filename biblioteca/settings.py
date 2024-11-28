@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     'core',
     'django_filters',
     'rest_framework.authtoken',
-    
+    'drf_spectacular',
+    'corsheaders',
+
+
 ]
 
 MIDDLEWARE = [
@@ -52,6 +55,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+
+
 ]
 
 ROOT_URLCONF = 'biblioteca.urls'
@@ -152,16 +158,20 @@ REST_FRAMEWORK = {
         "user": "100/hour",
         "colecoes": "200/hour",
         "livros": "150/hour",
+        "categorias": "150/hour",
+
     },
+
 
     # Adicionar ao final do dicionário
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+
 
 }
 
 SPECTACULAR_SETTINGS = {
     "TITLE": "RESTIC Back-end API",
-    "DESCRIPTION": "Your project description",
+    "DESCRIPTION": "projeto biblioteca",
     "VERSION": "1.0.0",
     "SERVE INCLUDE SCHEMA": False,
     # OTHER SETTINGS
@@ -173,4 +183,7 @@ SPECTACULAR_SETTINGS = {
         # Mantém a autorização no Swagger UI durante as requisições
         "persistAuthorization": True,
     },
+     
+
+
 }
